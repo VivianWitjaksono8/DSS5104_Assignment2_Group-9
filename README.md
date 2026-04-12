@@ -88,9 +88,9 @@ Test results are consistent with validation — no significant overfitting obser
 
 ---
 
-## Key Discussion
+## Key Findings & Discussions
 
-**Architecture.** SegFormer is the clear winner at mIoU 0.8178 (val) / 0.8293 (test), outperforming all CNN models across every metric. Its advantage is most visible in boundary segmentation, where global self-attention captures long-range spatial context that local CNN receptive fields miss. Among CNNs, DeepLabV3, UNet, and FPN perform at a comparable level — the gaps are small, confirming that CNN architecture choice has limited practical impact on a well-curated dataset of this size.
+**Architecture.** SegFormer is the best model at mIoU 0.8178 (val) / 0.8293 (test), outperforming all CNN models across every metric. Its advantage is most visible in boundary segmentation, where global self-attention captures long-range spatial context that local CNN receptive fields miss. Among CNNs, **DeepLabV3** performs best (mIoU 0.8055), followed closely by UNet (0.8031) and FPN (0.7927). The gaps between them are small, confirming that CNN architecture choice has limited practical impact on a well-curated dataset of this size. DeepLabV3's slight edge likely comes from its Atrous Spatial Pyramid Pooling (ASPP), which captures multi-scale context more effectively than UNet's skip connections or FPN's feature pyramid alone.
 
 **Backbone.** A heavier backbone does not guarantee better results. ResNet34 (mIoU 0.8039, 61.96 FPS) outperforms EfficientNet-B3 (mIoU 0.8000, 51.37 FPS) despite having more parameters. EfficientNet-B3 offers no practical advantage in either accuracy or speed at this dataset scale, likely requiring more training data or longer training to fully converge.
 
@@ -111,11 +111,12 @@ Test results are consistent with validation — no significant overfitting obser
 ```
 DSS5104-Assignment2-Group9/
 │
-├── Assignment2_DSS5104_Group9.ipynb                  # Main experiment notebook
-├── Assignment2_DSS5104_Group9_Documentation.pdf      # Full written report
-├── HTMLResult_DSS5104_Assignment2_Group9.html        # Full results viewer (open in browser)
-├── requirements_install.txt                          # All pip dependencies
-└── README.md                                         # This file
+├── Assignment2_DSS5104_Group9.ipynb                         # Main experiment notebook
+├── Assignment2_DSS5104_Group9_Documentation.pdf             # Full written report
+├── HTMLResult_DSS5104_Assignment2_Group9.html               # Full results viewer (open in browser)
+├── requirements_install.txt                                 # All pip dependencies
+├── requirements_full with notes and hyperparameters.txt     # All pip dependencies with notes and hyperparameters used
+└── README.md                                                        
 ```
 
 > The following directories are auto-generated at runtime and are not committed to the repository:
