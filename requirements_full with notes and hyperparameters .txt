@@ -1,0 +1,131 @@
+# ============================================================
+# Requirements for Assignment 2: Deep Learning for Image Segmentation
+# DSS5104 — Group 9
+# ============================================================
+# Python version: 3.10 or 3.11 recommended (NOT 3.14 — too new)
+#
+# ── STEP 1: Install PyTorch (choose one based on your hardware) ──
+#
+#   GPU — CUDA 11.8:
+#     pip install torch>=2.0.0 torchvision>=0.15.0 --index-url https://download.pytorch.org/whl/cu118
+#
+#   GPU — CUDA 12.1:
+#     pip install torch>=2.0.0 torchvision>=0.15.0 --index-url https://download.pytorch.org/whl/cu121
+#
+#   CPU only:
+#     pip install torch>=2.0.0 torchvision>=0.15.0 --index-url https://download.pytorch.org/whl/cpu
+#
+# ── STEP 2: Install remaining dependencies ──
+#     pip install -r requirements.txt
+#
+# ── STEP 3: Install SAM (not on PyPI) ──
+#     pip install git+https://github.com/facebookresearch/segment-anything.git
+#
+# ── STEP 4: Download SAM checkpoint (~2.5 GB) ──
+#     wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+# ============================================================
+
+
+# ── Core Deep Learning ─────────────────────────────────────
+torch>=2.0.0
+torchvision>=0.15.0
+# Note: torch.cuda.amp (autocast, GradScaler) is built into PyTorch >= 1.6
+# No separate install needed for mixed precision training
+
+
+# ── Segmentation Models ────────────────────────────────────
+# Models used: UNet, DeepLabV3, FPN
+# Backbones used: ResNet34, EfficientNet-B3 (pretrained on ImageNet)
+segmentation-models-pytorch>=0.3.3
+
+
+# ── Transformers / SegFormer ───────────────────────────────
+# Model used: nvidia/mit-b2 (SegformerForSemanticSegmentation)
+# image_size=256, num_classes=3
+transformers>=4.35.0
+
+
+# ── SAM — Segment Anything Model ──────────────────────────
+# Install from GitHub (see STEP 3 above)
+# Checkpoint used: sam_vit_h_4b8939.pth (ViT-H, ~2.5 GB)
+segment-anything @ git+https://github.com/facebookresearch/segment-anything.git
+
+
+# ── Augmentation ───────────────────────────────────────────
+# Used: albumentations, albumentations.pytorch.ToTensorV2
+albumentations>=1.3.0
+
+
+# ── Model Complexity & Benchmarking ───────────────────────
+# Used: FlopCountAnalysis — compute FLOPs and parameter counts
+fvcore>=0.1.5
+
+
+# ── Data & Numerics ────────────────────────────────────────
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0            # scipy.ndimage: binary_erosion, binary_dilation
+scikit-learn>=1.3.0      # train_test_split
+
+
+# ── Visualization ──────────────────────────────────────────
+matplotlib>=3.7.0        # plt, Line2D, Patch, mpatches
+seaborn>=0.12.0
+
+
+# ── Image Processing ───────────────────────────────────────
+Pillow>=9.5.0            # PIL.Image
+
+
+# ── Google Colab ───────────────────────────────────────────
+# google.colab is pre-installed on Colab — do NOT pip install manually
+# If running locally, remove any `from google.colab import drive` lines
+
+
+# ── Standard Library — no install needed ──────────────────
+# os, copy, math, random, time, shutil, logging, subprocess, collections
+# All built into Python
+
+
+# ============================================================
+# HYPERPARAMETERS (for reproducibility)
+# ============================================================
+#
+# ── Data ───────────────────────────────────────────────────
+#   Dataset         : Oxford-IIIT Pet (torchvision.datasets.OxfordIIITPet)
+#   Image size      : 256 x 256
+#   Num classes     : 3 (foreground, background, boundary)
+#   Batch size      : 16
+#   Num workers     : 2
+#   Random seed     : 42
+#
+# ── Training ───────────────────────────────────────────────
+#   Optimizer       : AdamW
+#   Learning rate   : 1e-4
+#   Weight decay    : 1e-4
+#   LR scheduler    : CosineAnnealingLR
+#   Num epochs      : 30 (main), 20 (backbone ablation), 10 (loss ablation)
+#   Early stopping  : patience=7 (main), patience=5 (ablation)
+#   Max grad norm   : 1.0 (gradient clipping)
+#   Mixed precision : torch.cuda.amp (autocast + GradScaler)
+#
+# ── Loss Functions ─────────────────────────────────────────
+#   CrossEntropy    : weighted (class-frequency balanced)
+#   DiceLoss        : smooth=1e-6
+#   FocalLoss       : gamma=2.0
+#   DiceFocalLoss   : alpha=0.5 (equal weighting of Dice + Focal)
+#
+# ── Models ─────────────────────────────────────────────────
+#   UNet            : encoder=resnet34, weights=imagenet
+#   DeepLabV3       : encoder=resnet34, weights=imagenet  ← final best model
+#   FPN             : encoder=resnet34, weights=imagenet
+#   SegFormer       : nvidia/mit-b2, image_size=256
+#
+# ── Backbone Ablation ──────────────────────────────────────
+#   Base            : DeepLabV3 + ResNet34
+#   Tuned           : DeepLabV3 + EfficientNet-B3
+#
+# ── SAM (Zero-Shot) ────────────────────────────────────────
+#   Checkpoint      : sam_vit_h_4b8939.pth (ViT-H)
+#   Mode            : SamAutomaticMaskGenerator (zero-shot, no fine-tuning)
+# ============================================================
