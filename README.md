@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🐾 Deep Learning for Image Segmentation
+# Deep Learning for Image Segmentation
 ### Scene Understanding on the Oxford-IIIT Pet Dataset
 
 <br/>
@@ -31,7 +31,7 @@
 
 This repository contains the full experimental pipeline for **semantic segmentation** on the [Oxford-IIIT Pet Dataset](https://www.robots.ox.ac.uk/~vgg/data/pets/) (~7,300 images, 37 pet breeds). The study systematically benchmarks four segmentation architectures — **UNet, DeepLabV3, FPN, and SegFormer** — alongside ablation studies on backbone selection, loss functions, and data augmentation strategies, with a zero-shot baseline from **SAM (Segment Anything Model)**.
 
-### 🏆 Key Results at a Glance
+### Key Results at a Glance
 
 | Model | mIoU (Val) | mIoU (Test) | FPS |
 |---|---|---|---|
@@ -41,18 +41,18 @@ This repository contains the full experimental pipeline for **semantic segmentat
 | FPN | 0.7927 | — | **135.44** |
 | SAM Zero-Shot (baseline) | 0.2194 | — | — |
 
-> ⚠️ **Reproducibility Note:** All experiments were run on NVIDIA T4 GPUs via Google Colab with mixed precision training. Due to GPU non-determinism, metric values may vary slightly between runs, but relative model rankings remain consistent.
+> **Reproducibility Note:** All experiments were run on NVIDIA T4 GPUs via Google Colab with mixed precision training. Due to GPU non-determinism, metric values may vary slightly between runs, but relative model rankings remain consistent.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 DSS5104-Assignment2-Group9/
 │
-├── 📓 Assignment2_DSS5104_Group9.ipynb          # Main experiment notebook
-├── 📄 Assignment2_DSS5104_Group9_Documentation.pdf  # Full PDF report
-├── 📦 requirements_install.txt                  # All pip dependencies
+├──  Assignment2_DSS5104_Group9.ipynb          # Main experiment notebook
+├──  Assignment2_DSS5104_Group9_Documentation.pdf  # Full PDF report
+├──  requirements_install.txt                  # All pip dependencies
 ├── 📖 README.md                                 # This file
 │
 └── 📂 (auto-generated at runtime)
@@ -65,7 +65,7 @@ DSS5104-Assignment2-Group9/
 
 ---
 
-## ⚙️ Environment Setup
+##  Environment Setup
 
 ### Prerequisites
 
@@ -75,7 +75,7 @@ DSS5104-Assignment2-Group9/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Clone the Repository
 
