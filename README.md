@@ -100,7 +100,7 @@ Test results are consistent with validation — no significant overfitting obser
 
 **Efficiency.** FPN (135 FPS) and UNet (131 FPS) are the best choices for real-time deployment. SegFormer provides the highest accuracy at a higher compute cost (57 FPS). DeepLabV3 + Dice offers the best CNN accuracy-to-speed ratio at 61 FPS.
 
-**Failure Cases.** All models consistently struggle with three patterns: (1) low-contrast scenes where the pet blends into the background, (2) unusual or non-upright poses underrepresented in training data, and (3) fine structures such as tails or legs that span only a few pixels at 256×256 resolution. These are largely data-driven limitations rather than architecture-specific issues.
+**Failure Cases.** Qualitative analysis was conducted on DeepLabV3 + DiceFocal as the representative CNN model. All models consistently struggle with three patterns: (1) low-contrast scenes where the pet blends into the background, (2) unusual or non-upright poses underrepresented in training data, and (3) fine structures such as tails or legs that span only a few pixels at 256×256 resolution. These are largely data-driven limitations rather than architecture-specific issues.
 
 **SAM Zero-Shot.** SAM (mIoU 0.2194) falls far below any trained model and scores zero Boundary IoU — it has no concept of the semantic boundary class defined in this dataset. Fine-tuning remains necessary for structured segmentation tasks.
 
