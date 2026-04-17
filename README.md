@@ -11,9 +11,11 @@
 ![Platform](https://img.shields.io/badge/Platform-Google%20Colab%20%7C%20Local-yellow?style=flat-square)
 ![GPU](https://img.shields.io/badge/GPU-NVIDIA%20T4%2B-76B900?style=flat-square&logo=nvidia)
 
-<br/>
+</div>
 
-**DSS5104 — Machine Learning and Predictive Modelling | Assignment 2**
+---
+
+**DSS5104 — Machine Learning and Predictive Modelling - Academic Year 2025 - 2026 | Assignment 2**
 
 | Member | Student ID |
 |--------|------------|
@@ -23,6 +25,8 @@
 
 **Group 9 · April 2026**
 
+---
+
 ### Code Access
 
 To view and run the code for this project, please download the notebook file from the GitHub repository:
@@ -31,18 +35,17 @@ To view and run the code for this project, please download the notebook file fro
 
 Once downloaded, you can open and execute the notebook using either:
 
-* **Visual Studio Code (VS Code)**, or
-* **Google Colab**
+- **Visual Studio Code (VS Code)**  
+- **Google Colab**
 
 Make sure all required dependencies are installed before running the notebook.
 
+---
+
 ### Notes
 
-1. All code development and experiments were conducted in Google Colab with GPU support. Due to GPU non-determinism, results may vary slightly across runs, but overall model rankings remain consistent.
+1. All code development and experiments were conducted in Google Colab with GPU support. Due to GPU non-determinism, results may vary slightly across runs, but overall model rankings remain consistent.  
 2. HTML-rendered results are provided on GitHub to avoid rerunning the full, time-intensive pipeline and to enable quick access for review.
-
-
-</div>
 
 ---
 
