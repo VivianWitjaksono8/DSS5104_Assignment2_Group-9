@@ -23,6 +23,25 @@
 
 **Group 9 · April 2026**
 
+### Code Access
+
+To view and run the code for this project, please download the notebook file from the GitHub repository:
+
+**Assignment2_DSS5104_Group9.ipynb**
+
+Once downloaded, you can open and execute the notebook using either:
+
+* **Visual Studio Code (VS Code)**, or
+* **Google Colab**
+
+Make sure all required dependencies are installed before running the notebook.
+
+### Notes
+
+1. All code development and experiments were conducted in Google Colab with GPU support. Due to GPU non-determinism, results may vary slightly across runs, but overall model rankings remain consistent.
+2. HTML-rendered results are provided on GitHub to avoid rerunning the full, time-intensive pipeline and to enable quick access for review.
+
+
 </div>
 
 ---
