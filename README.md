@@ -45,7 +45,7 @@ Make sure all required dependencies are installed before running the notebook.
 ### Notes
 
 1. All code development and experiments were conducted in Google Colab with GPU support. Due to GPU non-determinism, results may vary slightly across runs, but overall model rankings remain consistent.  
-2. HTML-rendered results (`HTMLResult_DSS5104_Assignment2_Group9.html`) are included in this repository to avoid re-execution of the full computational pipeline and to facilitate efficient review of experimental outputs.
+2. HTML-rendered results **(`HTMLResult_DSS5104_Assignment2_Group9.html`)** are included in this repository to avoid re-execution of the full computational pipeline and to facilitate efficient review of experimental outputs.
 
 ---
 
