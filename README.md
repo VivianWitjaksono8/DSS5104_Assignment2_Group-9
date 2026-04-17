@@ -1,4 +1,4 @@
-<div align="center">
+<div>
 
 # Deep Learning for Image Segmentation
 ### Scene Understanding on the Oxford-IIIT Pet Dataset
