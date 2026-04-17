@@ -31,7 +31,7 @@
 
 To view and run the code for this project, please download the notebook file from the GitHub repository:
 
-**Assignment2_DSS5104_Group9.ipynb**
+**`Assignment2_DSS5104_Group9.ipynb`**
 
 Once downloaded, you can open and execute the notebook using either:
 
@@ -45,7 +45,7 @@ Make sure all required dependencies are installed before running the notebook.
 ### Notes
 
 1. All code development and experiments were conducted in Google Colab with GPU support. Due to GPU non-determinism, results may vary slightly across runs, but overall model rankings remain consistent.  
-2. HTML-rendered results are provided on GitHub to avoid rerunning the full, time-intensive pipeline and to enable quick access for review.
+2. HTML-rendered results (`HTMLResult_DSS5104_Assignment2_Group9.html`) are included in this repository to avoid re-execution of the full computational pipeline and to facilitate efficient review of experimental outputs.
 
 ---
 
