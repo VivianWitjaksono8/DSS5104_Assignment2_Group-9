@@ -29,7 +29,7 @@
 
 ### Code Access
 
-To view and run the code for this project, please download the notebook file from the GitHub repository:
+To view and run the code for this project, **please download the notebook file** from the GitHub repository:
 
 **`Assignment2_DSS5104_Group9.ipynb`**
 
